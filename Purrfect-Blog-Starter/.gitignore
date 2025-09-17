@@ -1,0 +1,12 @@
+.vs/
+*.user
+*.suo
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+packages/
+*.nupkg
+*.Publish.xml
+*.pubxml
+*.pubxml.user
