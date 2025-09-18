@@ -56,7 +56,7 @@ namespace Purrfect_Blog_Starter.Controllers
             if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                 return Redirect(returnUrl);
 
-            return RedirectToAction("Dashboard", "Cat");
+            return RedirectToAction("Facts", "Cat");
         }
 
         [AllowAnonymous]
@@ -98,7 +98,7 @@ namespace Purrfect_Blog_Starter.Controllers
             Auth.SignOut("ApplicationCookie");
             Auth.SignIn(new AuthenticationProperties { IsPersistent = false }, identity);
 
-            return RedirectToAction("Index", "Cat");
+            return RedirectToAction("Facts", "Cat");
         }
 
 

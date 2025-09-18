@@ -16,14 +16,25 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="nav-item">
+                            <a href="@Url.Action("Facts","Cat")" class="nav-link">Facts</a>
+                        </li>
+                    }
+                </ul>
+
                 <ul class="navbar-nav ms-auto">
                     @if (User.Identity.IsAuthenticated)
                     {
-                        using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "d-inline" }))
-                        {
-                            @Html.AntiForgeryToken()
-                            <button type="submit" class="nav-link-button">Logout</button>
-                        }
+                        <li class="nav-item">
+                            @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "logoutForm", @class = "d-inline" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <button type="submit" class="btn btn-link nav-link" style="text-decoration:none;">Logout</button>
+                            }
+                        </li>
                     }
                     else
                     {

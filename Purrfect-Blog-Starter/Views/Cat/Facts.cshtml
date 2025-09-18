@@ -1,0 +1,42 @@
+﻿@model Purrfect_Blog_Starter.ViewModels.CatFactsViewModel
+
+@{
+    ViewBag.Title = "Cat Facts";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container my-4">
+    <div class="row">
+        <div class="mx-auto">
+            <div class="card shadow-sm">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <span class="fw-semibold">Cat Facts</span>
+                </div>
+
+                <div class="card-body p-0">
+                    @if (Model.Facts.Any())
+                    {
+                        <ul class="list-group list-group-flush facts-scroll">
+                            @foreach (var fact in Model.Facts)
+                            {
+                                <li class="list-group-item d-flex align-items-start justify-content-between">
+                                    <span class="me-3">@fact.Description</span>
+                                    <span>
+                                        <button type="button" class="btn btn-outline-primary" title="Save">Save</button>
+                                    </span>
+                                    
+                                </li>
+                            }
+                        </ul>
+                    }
+                    else
+                    {
+                        <div class="p-4 text-center text-muted">
+                            No data to display.
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
