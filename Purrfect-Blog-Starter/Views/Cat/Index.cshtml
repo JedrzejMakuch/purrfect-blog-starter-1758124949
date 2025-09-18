@@ -5,6 +5,32 @@
 <div class="container my-5">
     <h1 class="mb-4 text-center">Welcome to Purrfect Blog Starter</h1>
     <div class="row row-cols-1 row-cols-md-3 g-4">
-        INDEX
+        <div class="col-12 col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">Already have an account?</h5>
+                    <p class="card-text text-muted">
+                        Sign in to access your dashboard and explore cat facts.
+                    </p>
+                    <a href="@Url.Action("Login","Account")" class="btn btn-primary w-100">
+                        Login
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-5 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body text-center">
+                    <h5 class="card-title mb-3">New here?</h5>
+                    <p class="card-text text-muted">
+                        Create an account and start browsing fresh cat facts.
+                    </p>
+                    <a href="@Url.Action("Register","Account")" class="btn btn-success w-100">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
