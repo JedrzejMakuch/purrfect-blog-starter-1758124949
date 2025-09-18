@@ -7,8 +7,16 @@
 [Your Demo Link Here](http://replace-with-your-link.com)
 
 **Demo Credentials (If applicable):**
-- **Username:** ReplaceThisWithUsername
-- **Password:** ReplaceThisWithPassword
+- **Username:** Test1
+- **Password:** Test1#123
+
+**Demo Credentials (If applicable):**
+- **Username:** Test2
+- **Password:** Test2#123
+
+**Demo Credentials (If applicable):**
+- **Username:** Test3
+- **Password:** Test3#123
 
 ## 📖 About this Software
 
