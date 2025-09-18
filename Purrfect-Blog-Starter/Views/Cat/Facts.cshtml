@@ -21,10 +21,12 @@
                             {
                                 <li class="list-group-item d-flex align-items-start justify-content-between">
                                     <span class="me-3">@fact.Description</span>
-                                    <span>
-                                        <button type="button" class="btn btn-outline-primary" title="Save">Save</button>
-                                    </span>
-                                    
+                                    @if (!fact.IsAlreadySaved)
+                                    {
+                                        <span>
+                                            <a type="button" href="@Url.Action("Save","Cat", new { description = fact.Description })" class="btn btn-outline-primary" title="Save">Save</a>
+                                        </span>
+                                    }
                                 </li>
                             }
                         </ul>

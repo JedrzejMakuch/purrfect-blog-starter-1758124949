@@ -1,9 +1,8 @@
 ﻿namespace Purrfect_Blog_Starter.ViewModels
 {
-    public class CatFactViewModel
+    public class SavedFactsViewModel
     {
+        public int Id { get; set; }
         public string Description { get; set; }
-
-        public bool IsAlreadySaved { get; set; }
     }
 }

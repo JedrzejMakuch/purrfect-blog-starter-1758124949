@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+using Purrfect_Blog_Starter.Data;
 using Purrfect_Blog_Starter.Models;
 using Purrfect_Blog_Starter.ViewModels;
 using System.Threading.Tasks;
@@ -11,12 +12,13 @@ namespace Purrfect_Blog_Starter.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
 
         public AccountController()
         {
-            var store = new UserStore<ApplicationUser>(new ApplicationDbContext());
-            _userManager = new UserManager<ApplicationUser>(store);
+            _context = new ApplicationDbContext();
+            _userManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(_context));
         }
 
         private IAuthenticationManager Auth => HttpContext.GetOwinContext().Authentication;
