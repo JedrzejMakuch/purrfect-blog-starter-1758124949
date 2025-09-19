@@ -15,11 +15,16 @@ namespace Purrfect_Blog_Starter
     {
         protected void Application_Start()
         {
-            AreaRegistration.RegisterAllAreas();
+                AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             SeedUsersAndFacts();
+
+            System.Data.Entity.Database.SetInitializer(
+            new System.Data.Entity.MigrateDatabaseToLatestVersion<
+                ApplicationDbContext,
+                Migrations.Configuration>());
         }
 
         private void SeedUsersAndFacts()
