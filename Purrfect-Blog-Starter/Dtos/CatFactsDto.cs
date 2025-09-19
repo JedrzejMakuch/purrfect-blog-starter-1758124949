@@ -13,5 +13,8 @@ namespace Purrfect_Blog_Starter.Dtos
     {
         [JsonProperty("fact")] 
         public string Fact { get; set; }
+
+        [JsonProperty("length")]
+        public int Length { get; set; }
     }
 }

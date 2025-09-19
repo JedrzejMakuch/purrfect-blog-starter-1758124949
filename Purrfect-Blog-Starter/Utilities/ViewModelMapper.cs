@@ -37,5 +37,15 @@ namespace Purrfect_Blog_Starter.Utilities
                 Id = x.Id,
             }).ToList();
         }
+
+        public static CatFactViewModel ToFactViewModel(CatFactDto dto)
+        {
+            var vm = new CatFactViewModel
+            {
+                Description = dto.Fact
+            };
+
+            return vm;
+        }
     }
 }

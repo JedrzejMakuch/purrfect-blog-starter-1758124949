@@ -16,6 +16,7 @@ namespace Purrfect_Blog_Starter.Controllers
         private readonly IFactsService _factsService;
         private static readonly HttpClient _http = new HttpClient();
         private const string FactsUrl = "https://catfact.ninja/facts?limit=20";
+        private const string FactUrl = "https://catfact.ninja/fact?limit=50";
 
         public CatController(IFactsService factsService)
         {
@@ -23,7 +24,14 @@ namespace Purrfect_Blog_Starter.Controllers
         }
 
         [AllowAnonymous]
-        public ActionResult Index() => View();
+        public async Task<ActionResult> Index()
+        {
+            var vm = new CatFactViewModel();
+            var fact = await FetchFactAsync();
+            vm = ViewModelMapper.ToFactViewModel(fact);
+
+            return View(vm);
+        }
 
         [Authorize]
         public async Task<ActionResult> Facts()
@@ -87,6 +95,12 @@ namespace Purrfect_Blog_Starter.Controllers
 
             var json = await resp.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<CatFactsDto>(json);
+        }
+        private async Task<CatFactDto> FetchFactAsync()
+        {
+            var resp = await _http.GetAsync(FactUrl);
+            var json = await resp.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<CatFactDto>(json);
         }
     }
 }
