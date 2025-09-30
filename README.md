@@ -5,7 +5,7 @@ The project demonstrates user seeding, connecting to **Azure SQL Database**, and
 
 ## 🌐 Live Demo
 
-👉 **Live:** https://purrfect-blog-demo-bmfqdnd9defkhxh5.westeurope-01.azurewebsites.net
+👉 **Live:** 
 
 **Demo Credentials:**
 - **Username:** Test1 — **Password:** `Test1#123`
